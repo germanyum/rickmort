@@ -110,18 +110,18 @@ window.addEventListener("load", () => {
       item.addEventListener("click", (e) => {
         e.preventDefault();
         currentPage = parseInt(item.getAttribute("data-page-number"));
-        new Characters().get().then((json) => writeCharacters(json));
+        oneC.get().then((json) => writeCharacters(json));
       });
     });
 
     nextPageBtn?.addEventListener("click", (e) => {
       currentPage++;
-      new Characters().get().then((json) => writeCharacters(json));
+      oneC.get().then((json) => writeCharacters(json));
     });
 
     prevPageBtn?.addEventListener("click", (e) => {
       currentPage--;
-      new Characters().get().then((json) => writeCharacters(json));
+      oneC.get().then((json) => writeCharacters(json));
     });
   };
   oneC.get().then((json) => {

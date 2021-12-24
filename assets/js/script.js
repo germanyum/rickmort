@@ -43,7 +43,6 @@ window.addEventListener("load", () => {
 
   const writePaginationItems = (info) => {
     pagination.innerHTML = null;
-    let start = currentPage < 3 ? 1 : currentPage;
 
     if (currentPage > 1) {
       pagination.innerHTML += `
@@ -51,45 +50,17 @@ window.addEventListener("load", () => {
         <a href="#" class="pIcons" id="prevPageBtn"><span class="material-icons">west</span></a>
       </li>`;
     }
-
-    if (currentPage <= info.pages - 3) {
-      for (let i = start >= 3 ? start - 1 : start; i <= 2 + start; i++) {
-        pagination.innerHTML += `
-        <li>
-          <a href="#" class="${
-            i === currentPage && "currentPageNumber"
-          }" data-page-number=${i}><span>${i}</span></a>
-        </li>
-        `;
-      }
-    }
-
-    if (currentPage > info.pages - 3) {
-      for (let i = info.pages - 4; i < info.pages; i++) {
-        pagination.innerHTML += `
-        <li>
-          <a href="#" class="${
-            i === currentPage && "currentPageNumber"
-          }" data-page-number=${i}><span>${i}</span></a>
-        </li>
-        `;
-      }
-    }
-
-    if (currentPage < info.pages - 3) {
+    let currentPagelimit =
+      currentPage + 5 > info.pages ? info.pages : currentPage + 5;
+    for (let x = currentPage; x <= currentPagelimit; x++) {
       pagination.innerHTML += `
-      <li>
-        <a href="#"><span class="material-icons">more_horiz</span></a>
-      </li>`;
-    }
-
-    pagination.innerHTML += `
     <li>
       <a href="#" class="${
         info.pages === currentPage && "currentPageNumber"
-      }" data-page-number=${info.pages}><span>${info.pages}</span></a>
+      }" data-page-number=${x}><span>${x}</span></a>
     </li>
     `;
+    }
 
     if (currentPage < info.pages) {
       pagination.innerHTML += `
@@ -131,6 +102,7 @@ window.addEventListener("load", () => {
     name = key.target.value;
     oneC.search().then((json) => {
       writeCharacters(json);
+      console.log(json.info);
     });
   });
 });

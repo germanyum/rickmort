@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="center">
+        <div class="logo">
+          <h1><a href="#">Rick & Morty</a></h1>
+        </div>
+        <div class="navbar">
+          <nav>
+            <ul>
+              <li>
+                <a href="#" class="activeLink">Characters</a>
+              </li>
+              <li>
+                <a href="#">Episodes</a>
+              </li>
+              <li>
+                <span class="material-icons">search</span>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="search">
+      <div class="center">
+        <div class="searchInput">
+          <input
+            type="text"
+            name="search"
+            id="search"
+            autofocus
+            placeholder="search character"
+          />
+          <button type="button">
+            <span class="material-icons">search</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="bannerImage">
+      <img src="./assets/img/banner.png" alt="" draggable="false" />
+    </div>
+    <main>
+      <div class="container">
+        <div class="rows" id="characters">
+          <!-- cards -->
+        </div>
+      </div>
+    </main>
+    <div class="paginationContainer">
+      <ul id="paginationUl">
+        <!-- <li>
+          <a href="#" class="pIcons" id="prevPageBtn"><span class="material-icons">west</span></a>
+        </li> -->
+
+        <!-- <li>
+          <a href="#"><span class="material-icons">more_horiz</span></a>
+        </li> -->
+
+        <!-- <li>
+          <a href="#" class="pIcons" id="nextPageBtn"><span class="material-icons">east</span></a>
+        </li> -->
+      </ul>
+    </div>
+    <footer>
+      <div class="container">
+        <h3>
+          made with <span class="material-icons">favorite</span>
+          <a href="https://github.com/melihsahtulek">melihsahtulek</a>
+        </h3>
+      </div>
+    </footer>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
